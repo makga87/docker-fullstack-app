@@ -1,0 +1,11 @@
+FROM node:alpine
+
+WORKDIR /app
+
+COPY ./package.json ./
+
+RUN npm install
+
+COPY . .
+
+CMD ["npm", "run", "dev"] # package.json에 dev는 nodemon 으로 수행되도록 설정해두었음.
